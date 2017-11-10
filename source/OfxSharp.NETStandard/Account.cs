@@ -1,44 +1,14 @@
-using System;
 using System.Xml;
 
 namespace OfxSharp.NETStandard
 {
     public class Account
     {
-        public string AccountID { get; set; }
-        public string AccountKey { get; set; }
-        public AccountType AccountType { get; set; }
-
-        #region Bank Only
-
-        private BankAccountType _BankAccountType = BankAccountType.NA;
-
-        public string BankID { get; set; }
-
-        public string BranchID { get; set; }
-
-        public BankAccountType BankAccountType
-        {
-            get
-            {
-                if (AccountType == AccountType.BANK)
-                    return _BankAccountType;
-
-                return BankAccountType.NA;
-            }
-            set
-            {
-                _BankAccountType = AccountType == AccountType.BANK ? value : BankAccountType.NA;
-            }
-        }
-
-        #endregion Bank Only
-
         public Account(XmlNode node, AccountType type)
         {
             AccountType = type;
 
-            AccountID = node.GetValue("//ACCTID");
+            AccountId = node.GetValue("//ACCTID");
             AccountKey = node.GetValue("//ACCTKEY");
 
             switch (AccountType)
@@ -48,45 +18,62 @@ namespace OfxSharp.NETStandard
                     break;
 
                 case AccountType.AP:
-                    InitializeAP(node);
+                    InitializeAp(node);
                     break;
 
                 case AccountType.AR:
-                    InitializeAR(node);
-                    break;
-
-                default:
+                    InitializeAr(node);
                     break;
             }
         }
 
+        public string AccountId { get; set; }
+        public string AccountKey { get; set; }
+        public AccountType AccountType { get; set; }
+
         /// <summary>
-        /// Initializes information specific to bank
+        ///     Initializes information specific to bank
         /// </summary>
         private void InitializeBank(XmlNode node)
         {
-            BankID = node.GetValue("//BANKID");
-            BranchID = node.GetValue("//BRANCHID");
+            BankId = node.GetValue("//BANKID");
+            BranchId = node.GetValue("//BRANCHID");
 
             //Get Bank Account Type from XML
-            string bankAccountType = node.GetValue("//ACCTTYPE");
+            var bankAccountType = node.GetValue("//ACCTTYPE");
 
             //Check that it has been set
-            if (String.IsNullOrEmpty(bankAccountType))
+            if (string.IsNullOrEmpty(bankAccountType))
                 throw new OFXParseException("Bank Account type unknown");
 
             //Set bank account enum
-            _BankAccountType = bankAccountType.GetBankAccountType();
+            _bankAccountType = bankAccountType.GetBankAccountType();
         }
+
+        #region Bank Only
+
+        private BankAccountType _bankAccountType = BankAccountType.NA;
+
+        public string BankId { get; set; }
+
+        public string BranchId { get; set; }
+
+        public BankAccountType BankAccountType
+        {
+            get => AccountType == AccountType.BANK ? _bankAccountType : BankAccountType.NA;
+            set => _bankAccountType = AccountType == AccountType.BANK ? value : BankAccountType.NA;
+        }
+
+        #endregion Bank Only
 
         #region Account types not supported
 
-        private void InitializeAP(XmlNode node)
+        private void InitializeAp(XmlNode node)
         {
             throw new OFXParseException("AP Account type not supported");
         }
 
-        private void InitializeAR(XmlNode node)
+        private void InitializeAr(XmlNode node)
         {
             throw new OFXParseException("AR Account type not supported");
         }

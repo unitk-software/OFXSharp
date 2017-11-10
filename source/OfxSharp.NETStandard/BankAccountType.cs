@@ -4,16 +4,16 @@ namespace OfxSharp.NETStandard
 {
     public enum BankAccountType
     {
-        [Description("Checking Account")]
-        CHECKING,
-        [Description("Savings Account")]
-        SAVINGS,
-        [Description("Money Market Account")]
-        MONEYMRKT,
-        [Description("Line of Credit")]
-        CREDITLINE,
+        [Description("Checking Account")] CHECKING,
+
+        [Description("Savings Account")] SAVINGS,
+
+        [Description("Money Market Account")] MONEYMRKT,
+
+        [Description("Line of Credit")] CREDITLINE,
+
         NA,
-        [Description("Home Loan")]
-        HOMELOAN,
+
+        [Description("Home Loan")] HOMELOAN
     }
 }
