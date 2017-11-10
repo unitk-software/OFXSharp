@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Xml;
 
-namespace OFXSharp
+namespace OfxSharp.NETStandard
 {
    public class Balance
    {

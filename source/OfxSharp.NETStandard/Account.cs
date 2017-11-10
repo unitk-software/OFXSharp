@@ -1,7 +1,7 @@
 using System;
 using System.Xml;
 
-namespace OFXSharp
+namespace OfxSharp.NETStandard
 {
     public class Account
     {
@@ -17,23 +17,22 @@ namespace OFXSharp
 
         public string BranchID { get; set; }
 
-
         public BankAccountType BankAccountType
         {
             get
             {
                 if (AccountType == AccountType.BANK)
                     return _BankAccountType;
-                
+
                 return BankAccountType.NA;
             }
-            set 
+            set
             {
                 _BankAccountType = AccountType == AccountType.BANK ? value : BankAccountType.NA;
             }
         }
 
-        #endregion
+        #endregion Bank Only
 
         public Account(XmlNode node, AccountType type)
         {
@@ -47,12 +46,15 @@ namespace OFXSharp
                 case AccountType.BANK:
                     InitializeBank(node);
                     break;
+
                 case AccountType.AP:
                     InitializeAP(node);
                     break;
+
                 case AccountType.AR:
                     InitializeAR(node);
                     break;
+
                 default:
                     break;
             }
@@ -89,6 +91,6 @@ namespace OFXSharp
             throw new OFXParseException("AR Account type not supported");
         }
 
-        #endregion
+        #endregion Account types not supported
     }
 }

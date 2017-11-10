@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace OFXSharp
+namespace OfxSharp.NETStandard
 {
     public enum BankAccountType
     {

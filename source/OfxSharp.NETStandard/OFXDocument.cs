@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace OFXSharp
+namespace OfxSharp.NETStandard
 {
     public class OFXDocument
     {
