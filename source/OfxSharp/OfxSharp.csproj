@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>OfxSharp.NetStandard</PackageId>
+    <Description>.NET Standard port of OfxSharp library</Description>
+    <LicenseUrl>http://opensource.org/licenses/MIT</LicenseUrl>
+    <ProjectUrl>https://github.com/kevencarneiro/OFXSharp</ProjectUrl>
+    <Authors>jhollingworth, kevencarneiro</Authors>
+    <Tags>OFX money</Tags>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,7 +1,6 @@
-h1. How to use
+# How to use
 
-<pre>
+```C#
 var parser = new OFXDocumentParser();
 var ofxDocument = parser.Import(new FileStream(@"c:\ofxdoc.ofx", FileMode.Open));
-</pre>
-
+```
