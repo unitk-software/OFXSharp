@@ -1,7 +1,7 @@
 using System;
 using System.Xml;
 
-namespace OfxSharp.NETStandard
+namespace OfxSharp
 {
     public class SignOn
     {

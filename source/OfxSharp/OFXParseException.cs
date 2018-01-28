@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace OfxSharp.NETStandard
+namespace OfxSharp
 {
     [Serializable]
     public class OFXParseException : OFXException

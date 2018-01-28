@@ -5,6 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OfxSharp.NETStandard\OfxSharp.NETStandard.csproj" />
+    <ProjectReference Include="..\OfxSharp\OfxSharp.csproj" />
   </ItemGroup>
 </Project>

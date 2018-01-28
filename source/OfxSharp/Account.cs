@@ -1,6 +1,6 @@
 using System.Xml;
 
-namespace OfxSharp.NETStandard
+namespace OfxSharp
 {
     public class Account
     {

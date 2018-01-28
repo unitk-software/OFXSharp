@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using OfxSharp.NETStandard;
 
 namespace OfxSharp.NETCore.Tests
 {

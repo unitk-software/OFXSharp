@@ -5,7 +5,7 @@ using System.Text;
 using System.Xml;
 using ReadSharp.Ports.Sgml;
 
-namespace OfxSharp.NETStandard
+namespace OfxSharp
 {
     public class OFXDocumentParser
     {
