@@ -14,7 +14,7 @@ namespace OfxSharp
         {
             try
             {
-                return (BankAccountType) Enum.Parse(typeof(BankAccountType), bankAccountType, true);
+                return (BankAccountType)Enum.Parse(typeof(BankAccountType), bankAccountType, true);
             }
             catch (Exception)
             {
@@ -34,9 +34,15 @@ namespace OfxSharp
                 if (date.Length < 8)
                     return new DateTime();
 
-                var dd = int.Parse(date.Substring(6, 2));
-                var mm = int.Parse(date.Substring(4, 2));
-                var yyyy = int.Parse(date.Substring(0, 4));
+                int dd;
+                int.TryParse(date.Substring(6, 2), out dd);
+                int mm;
+                int.TryParse(date.Substring(4, 2), out mm);
+                int yyyy;
+                int.TryParse(date.Substring(0, 4), out yyyy);
+
+                if (yyyy == 0 || mm == 0 || dd == 0)
+                    return new DateTime(1, 1, 1);
 
                 return new DateTime(yyyy, mm, dd);
             }
