@@ -1,15 +1,15 @@
+﻿using ReadSharp.Ports.Sgml;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml;
-using ReadSharp.Ports.Sgml;
 
 namespace OfxSharp
 {
     public class OFXDocumentParser
     {
-        public OFXDocument Import(FileStream stream)
+        public OFXDocument Import(Stream stream)
         {
             using (var reader = new StreamReader(stream, Encoding.Default))
             {
