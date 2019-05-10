@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -221,7 +221,7 @@ namespace OfxSharp
             CheckHeader(header);
 
             //Remove header
-            return file.Substring(file.IndexOf('<') - 1);
+            return file.Substring(file.IndexOf('<')).Trim();
         }
 
         /// <summary>
