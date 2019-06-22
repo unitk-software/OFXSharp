@@ -27,12 +27,12 @@ namespace OfxSharp
         /// </summary>
         /// <param name="date">Date in YYYYMMDD format</param>
         /// <returns>Date in format DDMMYYYY</returns>
-        public static DateTime ToDate(this string date)
+        public static DateTime? ToDate(this string date)
         {
             try
             {
                 if (date.Length < 8)
-                    return new DateTime();
+                    return null;
 
                 int dd;
                 int.TryParse(date.Substring(6, 2), out dd);
@@ -42,7 +42,7 @@ namespace OfxSharp
                 int.TryParse(date.Substring(0, 4), out yyyy);
 
                 if (yyyy == 0 || mm == 0 || dd == 0)
-                    return new DateTime(1, 1, 1);
+                    return null;
 
                 return new DateTime(yyyy, mm, dd);
             }

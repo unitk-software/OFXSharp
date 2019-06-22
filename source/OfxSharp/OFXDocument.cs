@@ -5,9 +5,9 @@ namespace OfxSharp
 {
     public class OFXDocument
     {
-        public DateTime StatementStart { get; set; }
+        public DateTime? StatementStart { get; set; }
 
-        public DateTime StatementEnd { get; set; }
+        public DateTime? StatementEnd { get; set; }
 
         public AccountType AccType { get; set; }
 

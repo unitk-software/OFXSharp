@@ -16,7 +16,7 @@ namespace OfxSharp
 
         public string StatusSeverity { get; set; }
 
-        public DateTime DtServer { get; set; }
+        public DateTime? DtServer { get; set; }
 
         public int StatusCode { get; set; }
 
