@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -8,10 +8,12 @@
     <ProjectUrl>https://github.com/kevencarneiro/OFXSharp</ProjectUrl>
     <Authors>jhollingworth, kevencarneiro</Authors>
     <Tags>OFX money</Tags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.1.0</Version>
+    <Company>jhollingworth, kevencarneiro</Company>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="ReadSharp.Ports.SgmlReader.Core" Version="1.0.0" />
   </ItemGroup>
-
 </Project>

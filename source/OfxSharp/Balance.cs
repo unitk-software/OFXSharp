@@ -42,10 +42,10 @@ namespace OfxSharp
 
         public decimal LedgerBalance { get; set; }
 
-        public DateTime LedgerBalanceDate { get; set; }
+        public DateTime? LedgerBalanceDate { get; set; }
 
         public decimal AvaliableBalance { get; set; }
 
-        public DateTime AvaliableBalanceDate { get; set; }
+        public DateTime? AvaliableBalanceDate { get; set; }
     }
 }
