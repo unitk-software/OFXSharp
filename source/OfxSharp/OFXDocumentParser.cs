@@ -13,8 +13,13 @@ namespace OfxSharp
         {
             using (var reader = new StreamReader(stream, Encoding.Default))
             {
-                return Import(reader.ReadToEnd());
+                return Import(reader);
             }
+        }
+
+        public OFXDocument Import(StreamReader reader)
+        {
+            return Import(reader.ReadToEnd());
         }
 
         public OFXDocument Import(string ofx)
